@@ -3,13 +3,14 @@ import {createStackNavigator} from '@react-navigation/stack';
 import Home from '../screens/Home';
 import City from '../screens/city';
 import {primary} from '../constants/colors';
+import SplashScreen from '../screens/splash';
 
 const Stack = createStackNavigator();
 
 const Navigation = () => {
   return (
     <Stack.Navigator
-      initialRouteName="Home"
+      initialRouteName="Splash"
       screenOptions={{
         headerStyle: {
           backgroundColor: primary,
@@ -20,7 +21,13 @@ const Navigation = () => {
         headerTitleStyle: {alignSelf: 'center'}
       }}>
       <Stack.Screen
+        options={{headerShown: false}}
+        name="Splash"
+        component={SplashScreen}
+      />
+      <Stack.Screen
         name="Home"
+        options={{headerLeft: () => null}}
         component={Home}
       />
       <Stack.Screen
