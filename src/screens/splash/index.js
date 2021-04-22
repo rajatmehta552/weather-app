@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {useEffect} from 'react';
 import {View, Text} from 'react-native';
 import {getWeather} from '../../actions/weather';
@@ -8,7 +8,7 @@ import {style} from '../../common/style';
 const SplashScreen = ({navigation}) => {
     const {data} = React.useContext(weatherContext);
    useEffect(() => {
-    navigation.navigate('Home', {weather: data});
+    navigation.navigate('Home');
    }, []); 
     
   return (
